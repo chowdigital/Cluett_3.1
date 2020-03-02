@@ -130,6 +130,16 @@ function cluett_theme_3_0_scripts() {
 
 	wp_enqueue_script( 'cluett-theme-3-0-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	// GOOGLE REVIEWS 
+
+		wp_enqueue_style( 'reviews_css', get_template_directory_uri() . '/css/jquery-google-reviews.css', array(), '1.0', 'all' );
+
+		wp_enqueue_script( 'maps_api', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDM26xB-jnJUKnkSbQxx_E2JLX5zo07LXU', array());
+
+		wp_enqueue_script( 'reviews-js', get_template_directory_uri() . '/js/jquery-google-reviews.js', array(), true );
+
+	// GOOGLE REVIEW END
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
